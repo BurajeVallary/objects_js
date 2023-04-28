@@ -68,16 +68,16 @@ const students = [
 
 
   function studentsAverage(students) {
-    const topStudents = students.filter(student => {
+    const top = students.filter(student => {
       const averageScore = student.scores.reduce((total, score) => total + score, 0) / student.scores.length;
       return averageScore >= 85;
     });
-    const topStudentNames = topStudents.map(student => student.name);
-    return topStudentNames;
+    const topStudent = top.map(student => student.name);
+    return topStudent;
   }
 
-  const topStudentNames = studentsAverage(students);
-console.log(topStudentNames);
+  const topStudent = studentsAverage(students);
+console.log(topStudent);
 
 
 
@@ -96,7 +96,7 @@ const car = {
     },
   };
 
-  function addAgeMethodToCarObject(car) {
+  function carObject(car) {
     car.age = function() {
       const currentYear = new Date().getFullYear();
       return currentYear - this.year;
@@ -105,6 +105,6 @@ const car = {
   
 
   
-  addAgeMethodToCarObject(car);
+  carObject(car);
   
   console.log(car.age());
